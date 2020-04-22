@@ -12,15 +12,28 @@ class DogNewForm extends React.Component {
     }
   }
 
+  handleChange = (event) => {
+    console.log("handleChange")
+    console.log(event.target)
+    console.log(event.currentTarget)
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addDog(this.state)
-    console.log("handleSubmit in DogNewForm called")
+    this.setState({
+      breed: '',
+      position: '',
+      series: ''
+    })
 
   }
 
   render() {
-    console.log(this.props)
+    console.log(this.state)
     console.log("this.props in DogNewForm")
     return (
     
@@ -30,7 +43,7 @@ class DogNewForm extends React.Component {
             <div>
               <input
                 type="text"
-                name="Breed"
+                name="breed"
                 placeholder="Enter Breed"
                 value={this.state.breed}
                 onChange={this.handleChange}

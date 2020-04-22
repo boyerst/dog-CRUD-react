@@ -11,14 +11,19 @@ class DogContainer extends React.Component {
     }
   }
 
-  addDog = () => {
+  addDog = (dogToAdd) => {
     console.log("addDog() in App.js being called")
-    // console.log(dogToAdd)
+    console.log(dogToAdd)
+    const dogs = this.state.dogs
+    dogs.push(dogToAdd)
+    this.setState({dogs: dogs})
   }
 
 
 
   render() {
+    console.log("this.state in render() dogContainer")
+    console.log(this.state)
     return (
       <div className="DogContainer">
         <h1>DogContainer</h1>
