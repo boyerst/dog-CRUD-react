@@ -1,7 +1,8 @@
 
 import React from 'react'
 import './index.css'
-import DogNewForm from '../DogNewForm'
+import DogNewForm from './DogNewForm'
+import DogList from './DogList'
 
 class DogContainer extends React.Component {
   constructor() {
@@ -28,6 +29,7 @@ class DogContainer extends React.Component {
       <div className="DogContainer">
         <h1>DogContainer</h1>
         <DogNewForm addDog={this.addDog} />
+        <DogList />
       </div>
     )
   }
