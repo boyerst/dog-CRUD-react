@@ -20,6 +20,9 @@ class DogContainer extends React.Component {
     this.setState({dogs: dogs})
   }
 
+  deleteDog = (indexOfDogToDelete) => {
+    console.log("you are trying to delete a dog", indexOfDogToDelete)
+  }
 
 
   render() {
@@ -29,7 +32,10 @@ class DogContainer extends React.Component {
       <div className="DogContainer">
         <h1>DogContainer</h1>
         <DogNewForm addDog={this.addDog} />
-        <DogList dogs={this.state.dogs} />
+        <DogList 
+          dogs={this.state.dogs}
+          deleteDog={this.deleteDog}
+        />
       </div>
     )
   }

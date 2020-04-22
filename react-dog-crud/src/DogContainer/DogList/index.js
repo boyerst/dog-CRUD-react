@@ -9,6 +9,9 @@ function DogList(props) {
     return (
       <li key={i}>
         {dog.name} is a {dog.breed} that is {dog.age} years old.
+        <button onClick={ () => props.deleteDog(i) }>
+          Delete
+        </button>
      
       </li>
     )

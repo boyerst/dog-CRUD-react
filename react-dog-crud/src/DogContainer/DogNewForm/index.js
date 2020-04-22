@@ -34,7 +34,6 @@ class DogNewForm extends React.Component {
 
   render() {
     console.log(this.state)
-    console.log("this.props in DogNewForm")
     return (
     
       <div>
