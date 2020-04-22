@@ -22,11 +22,15 @@ class DogContainer extends React.Component {
 
   deleteDog = (indexOfDogToDelete) => {
     console.log("you are trying to delete a dog", indexOfDogToDelete)
+    const dogs = this.state.dogs
+    dogs.splice(indexOfDogToDelete, 1)
+    this.setState({
+      dogs: dogs
+    })
   }
 
 
   render() {
-    console.log("this.state in render() dogContainer")
     console.log(this.state)
     return (
       <div className="DogContainer">
