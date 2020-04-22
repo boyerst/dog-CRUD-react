@@ -13,9 +13,9 @@ class DogNewForm extends React.Component {
   }
 
   handleChange = (event) => {
-    console.log("handleChange")
-    console.log(event.target)
-    console.log(event.currentTarget)
+    // console.log("handleChange")
+    // console.log(event.target)
+    // console.log(event.currentTarget)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -26,8 +26,8 @@ class DogNewForm extends React.Component {
     this.props.addDog(this.state)
     this.setState({
       breed: '',
-      position: '',
-      series: ''
+      name: '',
+      age: ''
     })
 
   }

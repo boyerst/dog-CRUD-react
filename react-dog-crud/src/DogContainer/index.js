@@ -29,7 +29,7 @@ class DogContainer extends React.Component {
       <div className="DogContainer">
         <h1>DogContainer</h1>
         <DogNewForm addDog={this.addDog} />
-        <DogList />
+        <DogList dogs={this.state.dogs} />
       </div>
     )
   }
