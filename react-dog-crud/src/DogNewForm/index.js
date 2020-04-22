@@ -14,6 +14,7 @@ class DogNewForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    this.props.addDog(this.state)
     console.log("handleSubmit in DogNewForm called")
 
   }
