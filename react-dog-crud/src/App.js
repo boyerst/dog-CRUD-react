@@ -10,7 +10,6 @@ function App() {
       <h1>Dog CRUD</h1>
       <div>
         <DogContainer />
-       
       </div>
     </div>
 

@@ -2,9 +2,6 @@ import React from 'react'
 
 function DogList(props) {
   
-  console.log("here is props in DogList")
-
-
   const dogLis = props.dogs.map((dog, i) => {
     return (
       <li key={i}>
@@ -15,7 +12,6 @@ function DogList(props) {
         <button onClick={ () => props.editDog(i) }>
           Edit
         </button>
-     
       </li>
     )
   })
@@ -23,10 +19,10 @@ function DogList(props) {
   return (
     <div>
       <h3>Dog List</h3>
-      <ul>
-        {dogLis}
-      </ul>
-    </div>
+        <ul>
+          {dogLis}
+        </ul>
+      </div>
   )
 }
 

@@ -11,7 +11,7 @@ function DogEditForm(props) {
           type="text"
           name="breed"
           placeholder="Enter updated breed"
-          value={props.dogBeingEdited.breed}
+          value={props.dogCurrentlyBeingEdited.breed}
           onChange={props.handleDogToEdit}
         />
       </div>
@@ -20,7 +20,7 @@ function DogEditForm(props) {
           type="text"
           name="name"
           placeholder="Enter updated name"
-          value={props.dogBeingEdited.name}
+          value={props.dogCurrentlyBeingEdited.name}
           onChange={props.handleDogToEdit}
         />
       </div>
@@ -29,7 +29,7 @@ function DogEditForm(props) {
           type="text"
           name="age"
           placeholder="Enter updated age"
-          value={props.dogBeingEdited.age}
+          value={props.dogCurrentlyBeingEdited.age}
           onChange={props.handleDogToEdit}
         />
       </div>

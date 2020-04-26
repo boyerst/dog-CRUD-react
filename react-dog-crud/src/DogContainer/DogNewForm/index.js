@@ -13,9 +13,6 @@ class DogNewForm extends React.Component {
   }
 
   handleChange = (event) => {
-    // console.log("handleChange")
-    // console.log(event.target)
-    // console.log(event.currentTarget)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -33,7 +30,6 @@ class DogNewForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
     
       <div>

@@ -19,12 +19,11 @@ class DogContainer extends React.Component {
         age: 45
       }], 
       indexOfDogToEdit: -1,
-      dogBeingEdited: null
+      dogCurrentlyBeingEdited: null
     }
   }
 
   addDog = (dogToAdd) => {
-    console.log(dogToAdd)
     const dogs = this.state.dogs
     dogs.push(dogToAdd)
     this.setState({dogs: dogs})
@@ -39,11 +38,10 @@ class DogContainer extends React.Component {
   }
 
   editDog = (indexOfDogToEdit) => {
-    console.log("you are trying to edit a dog", indexOfDogToEdit)
     const dog = this.state.dogs[indexOfDogToEdit]
     this.setState({
       indexOfDogToEdit: indexOfDogToEdit,
-      dogBeingEdited: {
+      dogCurrentlyBeingEdited: {
         breed: dog.breed, 
         name: dog.name, 
         age: dog.age
@@ -52,30 +50,25 @@ class DogContainer extends React.Component {
   }
 
   handleDogToEdit = (event) => {
-    console.log(event.target.name)
-    console.log(event.target.value)
-
-    const dogBeingEdited = this.state.dogBeingEdited
-    dogBeingEdited[event.target.name] = event.target.value
+    const dogCurrentlyBeingEdited = this.state.dogCurrentlyBeingEdited
+    dogCurrentlyBeingEdited[event.target.name] = event.target.value
     this.setState({
-      dogBeingEdited: dogBeingEdited
+      dogCurrentlyBeingEdited: dogCurrentlyBeingEdited
     })
   }
 
   updateDog = (event) => {
     event.preventDefault()
     const dogs = this.state.dogs
-    console.log("dog edit route hitting")
-    dogs[this.state.indexOfDogToEdit] = this.state.dogBeingEdited
+    dogs[this.state.indexOfDogToEdit] = this.state.dogCurrentlyBeingEdited
     this.setState({
       dogs: dogs, 
       indexOfDogToEdit: -1, 
-      dogBeingEdited: null
+      dogCurrentlyBeingEdited: null
     })
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="DogContainer">
         <h1>DogContainer</h1>
@@ -89,11 +82,9 @@ class DogContainer extends React.Component {
           this.state.indexOfDogToEdit !== -1
           &&
           <DogEditForm
-            dogBeingEdited={this.state.dogBeingEdited}
+            dogCurrentlyBeingEdited={this.state.dogCurrentlyBeingEdited}
             handleDogToEdit={this.handleDogToEdit}
             updateDog={this.updateDog}
-            
-
            />
         }
       </div>
