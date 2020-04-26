@@ -12,6 +12,9 @@ function DogList(props) {
         <button onClick={ () => props.deleteDog(i) }>
           Delete
         </button>
+        <button onClick={ () => props.editDog(i) }>
+          Edit
+        </button>
      
       </li>
     )
